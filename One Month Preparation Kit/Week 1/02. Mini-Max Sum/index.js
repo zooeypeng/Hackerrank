@@ -1,5 +1,5 @@
-// Problem: Plus Minus
-// https://www.hackerrank.com/challenges/one-week-preparation-kit-mini-max-sum/problem
+// Question: Mini-Max Sum
+// https://www.hackerrank.com/challenges/one-month-preparation-kit-mini-max-sum
 
 'use strict';
 
@@ -31,14 +31,9 @@ function readLine() {
 
 function miniMaxSum(arr) {
     // Write your code here
-    const sorted = arr.sort((a, b) => a - b);
-    
-    let mid = 0
-    for (let i = 1; i < sorted.length - 1; i++) {
-        mid += sorted[i]
-    }
-    
-    console.log(mid + sorted[0], mid + sorted[sorted.length - 1])
+    const sortedArr = arr.sort((a, b) => a - b)
+    const mid = sortedArr[1] + sortedArr[2] + sortedArr[3]
+    console.log(sortedArr[0] + mid, sortedArr[4] + mid)
 }
 
 function main() {
