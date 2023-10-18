@@ -31,9 +31,9 @@ function readLine() {
 function miniMaxSum(arr) {
     // Write your code here
     arr.sort((a, b) => a - b);
-    const mid = arr[1] + arr[2] + arr[3]
+    const [min, max] = [arr.slice(0, 4).reduce((sum, num) => sum + num, 0), arr.slice(1).reduce((sum, num) => sum + num, 0)];
     
-    console.log(arr[0]+mid, arr[4]+mid)
+    console.log(min, max);
 }
 
 function main() {
