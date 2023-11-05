@@ -35,11 +35,9 @@ function readLine() {
 
 function pageCount(n, p) {
     // Write your code here
-    const fromFront = Math.floor(p / 2);
-    
-    const fromBack = Math.floor((n - p) / 2);
-    
-    return Math.min(fromFront, fromBack);
+    let df = Math.floor(n/2);
+    let dp = Math.floor(p/2);
+    return Math.min(dp, df-dp);
 }
 
 function main() {
