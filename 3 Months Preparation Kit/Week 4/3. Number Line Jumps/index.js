@@ -37,19 +37,9 @@ function readLine() {
 
 function kangaroo(x1, v1, x2, v2) {
     // Write your code here
-    if (x1 === x2 && v1 === v2) {
-        return 'YES'
-    }
-    
-    if (v1 === v2) {
-        return 'NO'
-    }
-    
-    if ((x2 - x1) % (v1 - v2) === 0 && (x2 - x1) / (v1 - v2) >= 0) {
-        return 'YES'
-    } else {
-        return 'NO'
-    }
+    const n = (x2 - x1) / (v1 - v2);
+
+    return Number.isInteger(n) && n >= 0 ? 'YES' : 'NO';
 }
 
 function main() {
