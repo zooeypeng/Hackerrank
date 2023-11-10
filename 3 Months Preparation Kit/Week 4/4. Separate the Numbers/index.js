@@ -31,24 +31,24 @@ function readLine() {
 function separateNumbers(s) {
     // Write your code here
 
-let mid = Math.floor(s.length / 2);
+    let mid = Math.floor(s.length / 2);
 
-    for (let i = 0; i < mid; i++) {
-        let st = s.slice(0, i + 1);
-        let temp = BigInt(st);
-        let t = '';
+        for (let i = 0; i < mid; i++) {
+            let st = s.slice(0, i + 1);
+            let temp = BigInt(st);
+            let t = '';
 
-        while (t.length < s.length) {
-            t += temp;
-            temp++;
+            while (t.length < s.length) {
+                t += temp;
+                temp++;
+            }
+
+            if (s === t) {
+                return console.log(`YES ${st}`);
+            }
         }
 
-        if (s === t) {
-            return console.log(`YES ${st}`);
-        }
-    }
-
-    console.log('NO');
+        console.log('NO');
 
 }
 
