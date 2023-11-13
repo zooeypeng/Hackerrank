@@ -57,7 +57,7 @@ function countCharacters(str) {
   for (const char of str) {
     count[char] = (count[char] || 0) + 1;
   }
-  return count;
+  return count; 
 }
 
 
