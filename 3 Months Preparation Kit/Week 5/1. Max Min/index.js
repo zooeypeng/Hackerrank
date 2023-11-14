@@ -40,11 +40,7 @@ function maxMin(k, arr) {
     let minRange = arr[k - 1] - arr[0];
     
     for (let i = 1; i <= arr.length - k; i++) {
-        let currentRange = arr[i + k - 1] - arr[i];
-        
-        if (currentRange < minRange) {
-            minRange = currentRange;
-        }
+        minRange = Math.min(arr[i + k - 1] - arr[i], minRange);
     }
     
     return minRange;
