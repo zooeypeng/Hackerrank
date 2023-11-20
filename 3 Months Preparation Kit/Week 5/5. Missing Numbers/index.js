@@ -1,5 +1,4 @@
 // https://www.hackerrank.com/challenges/three-month-preparation-kit-missing-numbers
-
 'use strict';
 
 const fs = require('fs');
@@ -35,39 +34,39 @@ function readLine() {
 
 function missingNumbers(arr, brr) {
     // Write your code here
-    const frequencyMap = {};
+    // const frequencyMap = {};
     
-    for (const num of arr) {
-        frequencyMap[num] = (frequencyMap[num] || 0) + 1;
-    }
+    // for (const num of arr) {
+    //     frequencyMap[num] = (frequencyMap[num] || 0) + 1;
+    // }
     
-    for (const num of brr) {
-        if (frequencyMap[num] > 0) {
-            frequencyMap[num]--;
-        } else {
-            frequencyMap[num] = 1;
-        }
-    }
-    
-    const missingNumbers = Object.keys(frequencyMap)
-        .filter(num => frequencyMap[num] > 0)
-        .join(' ');
-    
-    console.log(missingNumbers);
-    // const min = Math.min(...brr);
-    // const dif = Array(100).fill(0);
-    // const res = [];
-
-    // for (let n of arr) dif[n - min]--;
-    // for (let n of brr) dif[n - min]++;
-
-    // for (let i in dif) {
-    //     if (dif[i] > 0) {
-    //         res.push(+i + min);
+    // for (const num of brr) {
+    //     if (frequencyMap[num] > 0) {
+    //         frequencyMap[num]--;
+    //     } else {
+    //         frequencyMap[num] = 1;
     //     }
     // }
+    
+    // const missingNumbers = Object.keys(frequencyMap)
+    //     .filter(num => frequencyMap[num] > 0)
+    //     .join(' ');
+    
+    // console.log(missingNumbers);
+    const min = Math.min(...brr);
+    const dif = Array(100).fill(0);
+    const res = [];
 
-    // return res;
+    for (let n of arr) dif[n - min]--;
+    for (let n of brr) dif[n - min]++;
+
+    for (let i in dif) {
+        if (dif[i] > 0) {
+            res.push(+i + min);
+        }
+    }
+
+    return res;
 }
 
 function main() {
